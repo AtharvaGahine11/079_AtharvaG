@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Personal Portfolio</title>
+    <style>
+      
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            overflow-x: hidden;
+        }
+        
+       
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, #6e7dff, #5c9dff);
+            color: #fff;
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        
+        .profile-img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin-top: 30px;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+       
+        .about {
+            background-color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: -50px;
+            border-radius: 15px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+      
+        .skills {
+            background: #f1f5f8;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .skills h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+        
+        .skills ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .skills li {
+            background-color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #333;
+            min-width: 150px;
+        }
+        
+        .skills li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+       
+        .projects {
+            background: #fff;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 80px 20px;
+        }
+        
+        .project-card {
+            background-color: #f7f9fc;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .project-card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        
+        .contact {
+            background: linear-gradient(135deg, #ff6b6b, #ff7b7b);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact label {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact input, .contact textarea {
+            padding: 15px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact input:focus, .contact textarea:focus {
+            outline: none;
+            border: 2px solid #ff6b6b;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+        
+        .contact button {
+            background-color: #fff;
+            color: #ff6b6b;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact button:hover {
+            background-color: #ff7b7b;
+            color: #fff;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+        
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .project-card {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+        
+            .skills ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .skills li {
+                width: 80%;
+                margin-bottom: 15px;
+            }
+        
+            .contact input, .contact textarea {
+                width: 90%;
+            }
+        }
+        h2{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+    p{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }    
+        </style>
+</head>
+
+
+<body>
+   
+    <section class="hero">
+        <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Atharva Pravin Gahine</h1>
+        <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Web Developer💻</h2>
+        <img src="https://media-bom2-2.cdn.whatsapp.net/v/t61.24694-24/491840155_1030092605847213_8566781990044611556_n.jpg?ccb=11-4&oh=01_Q5Aa1QFsD9N4_xCjvyq2EbLczPlty3ng71bBl6rCXySgfXenXg&oe=680F4F94&_nc_sid=5e03e0&_nc_cat=102" alt="Your Photo" class="profile-img">
+    </section>
+
+   
+    <section class="about">
+        <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">About Me🥰</h2>
+        <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Hi, I'm Atharva Gahine 👋, a passionate web developer 💻 with experience in HTML, CSS, JavaScript, and more. I specialize in creating user-friendly websites 🌐 and web applications 🚀 that provide smooth and interactive experiences.
+
+            I thrive on problem-solving 🧩, always eager to tackle new challenges and find innovative solutions. Whether it’s debugging code 🐞 or designing responsive layouts 📱, I love every aspect of web development.
+            
+            I’m constantly learning 📚 and experimenting with new technologies 🔧 to stay ahead of the curve. My goal is to keep improving, build amazing projects 🌟, and help others bring their ideas to life 💡</p>
+    </section>
+
+   
+    <section class="skills">
+        <h2 >Skills</h2>
+        <ul style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>PYTHON</li>
+            <li>JAVA</li>
+            <li>C++</li>
+        </ul>
+    </section>
+
+    
+    <section class="projects">
+        <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Projects</h2>
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>HandsONLearn is an innovative learning app designed specifically for deaf and mute individuals. 🎓🤟 The app aims to bridge communication gaps and enhance learning experiences through sign language tutorials, visual aids, and interactive lessons.
+
+                With HandsONLearn, users can explore a wide range of subjects, from basic literacy to advanced topics, all in a format that’s accessible and easy to understand. 📚💡 The app offers real-time sign language translation, video tutorials, and quizzes to engage users actively.
+                
+                Our goal is to empower the deaf and mute community, providing them with an inclusive educational tool that fosters growth, independence, and confidence. 🌍✨ With HandsONLearn, learning becomes accessible to everyone, regardless of hearing or speech abilities.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Chhatrapati Sambhaji Maharaj - A Tribute Website is a dedicated platform created to honor the legacy and valor of Chhatrapati Sambhaji Maharaj, the second Maratha king and a true warrior of India's history. 🏰⚔️
+
+                This website serves as an informative resource about his life, reign, contributions, and his fierce battles in protecting the Maratha Empire. The website offers sections such as Biography, Achievements, Battles, and Legacy, showcasing his courage, wisdom, and leadership. 📜👑
+                
+                Built with HTML and CSS, the site features a clean, user-friendly design with responsive layouts, rich visuals, and historical context that highlights the greatness of Chhatrapati Sambhaji Maharaj. 💻🎨
+                
+                The goal of the project is to educate users about this unsung hero of Indian history, offering an interactive and visually appealing experience that sparks interest in his remarkable journey. 🌟</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 3</h3>
+            <p>EcoShop - An Eco-Friendly E-Commerce Website is an online platform designed to promote sustainable living by offering a range of eco-friendly products. 🌱🛒
+
+                The website allows users to browse, shop, and learn about products that contribute to a greener, cleaner planet. From reusable household items 🌍 to organic skincare 🧴, EcoShop aims to make sustainability accessible and easy for everyone.
+                
+                Built with HTML, CSS, and JavaScript, EcoShop features an intuitive user interface, smooth navigation, and product filters for an enhanced shopping experience. It also includes educational sections on the importance of sustainable practices, environmental impact, and how small changes can make a big difference. 🌿✨
+                
+                The goal of EcoShop is to inspire people to make conscious choices, reduce their carbon footprint, and create a more sustainable future for generations to come. 🌎</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+
+</html>
